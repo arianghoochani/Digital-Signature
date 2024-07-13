@@ -5,7 +5,7 @@ import rsa
 import base64
 
 class Signature :
-    def __init__(self, signDate="", signTime="", privateKeyFile=r"D:\arian\repos\Digital-Signature\digital_signature\server\private.pem", publicKeyFile=r"D:\arian\repos\Digital-Signature\digital_signature\server\public.pem") :
+    def __init__(self, signDate="", signTime="", privateKeyFile="/Users/arian/Desktop/myfiles/Projects/personal/repos/Digital-Signature/digital_signature/server/private.pem", publicKeyFile="/Users/arian/Desktop/myfiles/Projects/personal/repos/Digital-Signature/digital_signature/server/public.pem") :
         self.signDate = signDate
         self.signTime = signTime
         self.privateKeyFile = privateKeyFile
@@ -34,7 +34,7 @@ class Signature :
 def sign(request):
     # Generate RSA keys with a key size of 2048 bits
     (public_key, private_key) = rsa.newkeys(2048)
-    with open(r"D:\arian\repos\Digital-Signature\digital_signature\server\public.pem", "rb") as public_key_file:
+    with open("/Users/arian/Desktop/myfiles/Projects/personal/repos/Digital-Signature/digital_signature/server/public.pem", "rb") as public_key_file:
         pem_public_key = public_key_file.read()
     # Example string to sign
     string_to_sign = "sdasdasdasd"
